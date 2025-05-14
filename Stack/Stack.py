@@ -41,3 +41,12 @@ class Stack():
     return self.head.data
   def isEmpty(self):
     return self.head == None
+  def __str__(self):
+    aux = Stack()
+    string = ""
+    while not self.isEmpty():
+      aux.push(self.peek())
+      string += str(self.pop()) + " "
+    while not aux.isEmpty():
+      self.push(aux.pop())
+    return string
